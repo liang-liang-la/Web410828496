@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "HW2";
+}
+
+<h2>HW2</h2>
+
+<form action="/" method="post">
+    <p>姓名:@Html.TextBox("name")</p>
+    <p>帳號:@Html.TextBox("account")</p>
+    <p>密碼:@Html.Password("password")</p>
+    <p>性別:@Html.RadioButton("sex","0")男 @Html.RadioButton("sex","0")女</p>
+    <p>興趣:@Html.CheckBox("hobby 1")游泳 @Html.CheckBox("hobby 2")閱讀 @Html.CheckBox("hobby 3")看電影</p>
+    <p>自我介紹:@Html.TextArea("introduce")</p>
+
+</form>
+
