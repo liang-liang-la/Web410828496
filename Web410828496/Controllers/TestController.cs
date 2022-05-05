@@ -26,6 +26,8 @@ namespace Web410828496.Controllers
 
         public ActionResult HW3()
         {
+            ViewBag.EnterName = "My Name is";
+            ViewData["name"] = "cc";
             return View();
         }
     }
