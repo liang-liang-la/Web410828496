@@ -22,3 +22,25 @@
     <li>item 3</li>
 </ul>
 
+@DateTime.Now
+
+@{ 
+    var amout = 10;
+    var isValid = true;
+}
+
+<div>Amout number: @amout</div>
+
+@if (isValid)
+{
+<div>isValid is :@isValid</div>
+
+}
+
+<div>
+    the amount count :
+    @for (int i = 0; i < amout; i++)
+    {
+    <p>i: @i</p>
+    }
+</div>
