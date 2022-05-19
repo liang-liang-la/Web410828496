@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Web410828496.ViewModels;
 
 namespace Web410828496.Controllers
 {
@@ -11,28 +12,18 @@ namespace Web410828496.Controllers
         // GET: User
         public ActionResult Signup()
         {
-            return View();
+            return View(new SignUpData());
         }
 
         [HttpPost]
-        public ActionResult Signup(String name,string account,string password)
+        public ActionResult Signup(SignUpData data)
         {
-            if (name == null || name == "") {
-                ViewBag.NameMessage = "請輸入姓名";
-            }
-            if (account == null || account == "")
+            
+            if (ModelState.IsValid)
             {
-                ViewBag.AccountMessage = "請輸入帳號";
+                data.Message = "註冊成功";
             }
-            if (password == null || password == "")
-            {
-                ViewBag.PasseordMessage = "請輸入密碼";
-            }
-            if (name != "" && account != "" && password != "")
-            {
-                ViewBag.Message = "註冊成功";
-            }
-            return View();
+            return View(data);
         }
     }
 }
